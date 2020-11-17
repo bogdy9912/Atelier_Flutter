@@ -18,7 +18,8 @@ class _MyAppState extends State<MyApp> {
     if (s == null) {
       return false;
     }
-    return double.parse(s, (_) => null) != null;
+    double.tryParse(s);
+    return double.tryParse(s) != null;
   }
 
   @override
@@ -26,10 +27,9 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Center(
-            child: Text(
-              'Currency converter',
-            ),
+          centerTitle: true,
+          title: const Text(
+            'Currency converter',
           ),
         ),
         body: SingleChildScrollView(
@@ -41,7 +41,8 @@ class _MyAppState extends State<MyApp> {
                 height: 200,
               ),
               TextField(
-                keyboardType: TextInputType.phone,
+                keyboardType:
+                    const TextInputType.numberWithOptions(decimal: true),
                 decoration: InputDecoration(
                   hintText: 'enter the amount in euro',
                   errorText: errMessage,
@@ -51,28 +52,27 @@ class _MyAppState extends State<MyApp> {
                     amount = null;
                   }
                   amount = (double.parse(value) * 4.5).toStringAsFixed(2);
-                  if (double.parse(value) < 0)
+                  if (double.parse(value) < 0) {
                     print('Now you own us ${double.parse(value)}');
+                  }
                 },
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 12),
               RaisedButton(
                 onPressed: () {
-                  if (amount == null)
-                    errMessage = 'Please introduce a valid number';
-                  else
-                    errMessage = null;
-                  setState(() {});
+                  setState(() {
+                    if (amount == null) {
+                      errMessage = 'Please introduce a valid number';
+                    } else {
+                      errMessage = null;
+                    }
+                  });
                 },
                 child: Text(
                   'convert'.toUpperCase(),
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 12),
               if (amount != null)
                 Text(
                   amount,
