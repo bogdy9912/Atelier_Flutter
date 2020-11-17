@@ -64,9 +64,7 @@ class _MyAppState extends State<MyApp> {
                     errMessage = 'Please introduce a valid number';
                   else
                     errMessage = null;
-                  setState(() {
-                    print(amount);
-                  });
+                  setState(() {});
                 },
                 child: Text(
                   'convert'.toUpperCase(),
