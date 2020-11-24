@@ -96,11 +96,11 @@ class _HomepageState extends State<Homepage> {
         ),
         floatingActionButton: Builder(builder: (BuildContext ctx) {
           return FloatingActionButton(
-            onPressed: () {
+            onPressed: () async{
               final bool valid = Form.of(ctx).validate();
               if (valid) {
                 Form.of(ctx).save();
-                showDialog<AlertDialog>(
+                await showDialog<AlertDialog>(
                   context: ctx,
                   child: AlertDialog(
                     title: Text('$myNumber'),
