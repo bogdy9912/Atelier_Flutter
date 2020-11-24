@@ -122,45 +122,47 @@ class _HomapageState extends State<Homapage> {
                           margin: const EdgeInsets.symmetric(vertical: 12),
                           child: RaisedButton(
                             onPressed: () {
-                              Form.of(ctx).validate();
-                              Form.of(ctx).save();
-                              setState(() {
-                                if (int.tryParse(controller.text) >
-                                    randomNumber) {
-                                  option = 'Try lower';
-                                } else {
-                                  if (int.tryParse(controller.text) <
+                              final bool valid = Form.of(ctx).validate();
+                              if (valid) {
+                                Form.of(ctx).save();
+                                setState(() {
+                                  if (int.tryParse(controller.text) >
                                       randomNumber) {
-                                    option = 'Try higher';
+                                    option = 'Try lower';
                                   } else {
-                                    option = 'You guessed right';
+                                    if (int.tryParse(controller.text) <
+                                        randomNumber) {
+                                      option = 'Try higher';
+                                    } else {
+                                      option = 'You guessed right';
+                                    }
                                   }
-                                }
-                                myNumber = int.tryParse(controller.text);
-                                controller.clear();
-                                if (option == 'You guessed right') {
-                                  showDialog<Widget>(
-                                      context: ctx,
-                                      child: AlertDialog(
-                                        title: Text(option),
-                                        content: Text('It was $myNumber'),
-                                        actions: <Widget>[
-                                          FlatButton(
-                                            onPressed: () {
-                                              Navigator.of(context).pop();
-                                              setState(reloadGuessing);
-                                            },
-                                            child: const Text('Try again!'),
-                                          ),
-                                          FlatButton(
-                                            onPressed: () =>
-                                                Navigator.of(context).pop(),
-                                            child: const Text('OK'),
-                                          ),
-                                        ],
-                                      ));
-                                }
-                              });
+                                  myNumber = int.tryParse(controller.text);
+                                  controller.clear();
+                                });
+                              }
+                              if (option == 'You guessed right') {
+                                showDialog<Widget>(
+                                    context: ctx,
+                                    child: AlertDialog(
+                                      title: Text(option),
+                                      content: Text('It was $myNumber'),
+                                      actions: <Widget>[
+                                        FlatButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pop();
+                                            setState(reloadGuessing);
+                                          },
+                                          child: const Text('Try again!'),
+                                        ),
+                                        FlatButton(
+                                          onPressed: () =>
+                                              Navigator.of(context).pop(),
+                                          child: const Text('OK'),
+                                        ),
+                                      ],
+                                    ));
+                              }
                             },
                             child: const Text('Guess'),
                           ),
