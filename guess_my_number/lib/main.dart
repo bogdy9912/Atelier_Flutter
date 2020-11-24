@@ -41,10 +41,12 @@ class _HomapageState extends State<Homapage> {
   }
 
   void reloadGuessing() {
-    controller.clear();
-    myNumber = null;
-    option = '';
-    randomNumber = Random().nextInt(100);
+    setState(() {
+      controller.clear();
+      myNumber = null;
+      option = '';
+      randomNumber = Random().nextInt(100);
+    });
   }
 
   @override
@@ -151,7 +153,7 @@ class _HomapageState extends State<Homapage> {
                                         FlatButton(
                                           onPressed: () {
                                             Navigator.of(context).pop();
-                                            setState(reloadGuessing);
+                                            reloadGuessing();
                                           },
                                           child: const Text('Try again!'),
                                         ),
@@ -171,9 +173,7 @@ class _HomapageState extends State<Homapage> {
                         return Container(
                           margin: const EdgeInsets.symmetric(vertical: 12),
                           child: RaisedButton(
-                            onPressed: () {
-                              setState(reloadGuessing);
-                            },
+                            onPressed: reloadGuessing,
                             child: const Text('Reset'),
                           ),
                         );
