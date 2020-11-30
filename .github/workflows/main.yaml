@@ -20,8 +20,7 @@ jobs:
           cd ${{ matrix.module }}
           flutter pub get
       - name: Format code
-        run: |
-          cd ${{ matrix.module }}
+        run:
           flutter pub pub run --enable-asserts ci/bots/format.dart --set-exit-if-changed -n -l 120
 
   analyze:
@@ -42,6 +41,5 @@ jobs:
           cd ${{ matrix.module }}
           flutter pub get
       - name: Analyze code
-        run: |
-          cd ${{ matrix.module }}
+        run: 
           flutter pub pub run --enable-asserts ci/bots/analyze.dart
