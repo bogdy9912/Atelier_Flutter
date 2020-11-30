@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
               ),
               TextField(
                 keyboardType:
-                    const TextInputType.numberWithOptions(decimal: true),
+                const TextInputType.numberWithOptions(decimal: true),
                 decoration: InputDecoration(
                   hintText: 'enter the amount in euro',
                   errorText: errMessage,

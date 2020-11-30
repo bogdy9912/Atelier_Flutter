@@ -96,7 +96,7 @@ class _HomepageState extends State<Homepage> {
         ),
         floatingActionButton: Builder(builder: (BuildContext ctx) {
           return FloatingActionButton(
-            onPressed: () async{
+            onPressed: () async {
               final bool valid = Form.of(ctx).validate();
               if (valid) {
                 Form.of(ctx).save();

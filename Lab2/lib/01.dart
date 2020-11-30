@@ -4,10 +4,10 @@ import 'package:http/http.dart' as http;
 
 Future<void> main() async {
   final http.Response response =
-      await http.get('http://yts.mx/api/v2/list_movies.json');
+  await http.get('http://yts.mx/api/v2/list_movies.json');
 
   final Map<String, dynamic> responseData =
-      json.decode(response.body) as Map<String, dynamic>;
+  json.decode(response.body) as Map<String, dynamic>;
 //  print(data['data']['movies']);
 
   final Map<String, dynamic> data = responseData['data'];
