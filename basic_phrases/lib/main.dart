@@ -1,6 +1,10 @@
+import 'dart:io';
+
+import 'package:audioplayers/audio_cache.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sound/flutter_sound.dart';
+import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,7 +26,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<List<String>> dummyData = <List<String>>[
-    <String>['masina', ''],
+    <String>['masina', 'audio/audio1.mp3'],
     <String>['masina(Engleza)', ''],
     <String>['Marco', ''],
     <String>['Marco(Engleza)', ''],
@@ -59,9 +63,13 @@ class _HomePageState extends State<HomePage> {
                 ),
                 child: Text(dummyData[index][0], style: const TextStyle(color: Colors.white, fontSize: 16),),
               ),
-              onTap: () {
-                AudioPlayer audioPlayer = AudioPlayer();
-                audioPlayer.play('', isLocal: true);
+              onTap: () async{
+
+
+                final AudioCache player = AudioCache();
+                await player.play('${dummyData[index][1]}');
+
+
               },
             );
           }),
