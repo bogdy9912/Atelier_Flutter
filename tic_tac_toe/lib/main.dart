@@ -51,8 +51,7 @@ class _HomePageState extends State<HomePage> {
             height: 400,
             child: GridView.builder(
               itemCount: 9,
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 3),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
               itemBuilder: (BuildContext ctx, int index) {
                 return GestureDetector(
                   child: AnimatedContainer(
@@ -125,9 +124,7 @@ class _HomePageState extends State<HomePage> {
                       for (int k = 0; k < 3; k++) {
                         if (matrix[k][3].abs() == 3) {
                           for (int i = 0; i < 9; i++) {
-                            if (i != 3 * k &&
-                                i != 3 * k + 1 &&
-                                i != 3 * k + 2) {
+                            if (i != 3 * k && i != 3 * k + 1 && i != 3 * k + 2) {
                               isPressed[i] = Colors.white;
                             }
                           }
