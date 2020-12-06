@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        module: [ tic_tac_toe]
+        module: [basic_phrases, CurrencyConverter, guess_my_number, Lab2, number_shape, tic_tac_toe]
     env:
       CI_JOB_NAME: format
     steps:
@@ -28,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        module: [ tic_tac_toe]
+        module: [basic_phrases, CurrencyConverter, guess_my_number, Lab2, number_shape, tic_tac_toe]
     env:
       CI_JOB_NAME: analyze
     steps:
