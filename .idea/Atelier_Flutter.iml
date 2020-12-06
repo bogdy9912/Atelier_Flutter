@@ -7,10 +7,14 @@
       <excludeFolder url="file://$MODULE_DIR$/CurrencyConverter/build" />
       <excludeFolder url="file://$MODULE_DIR$/Lab2/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/Lab2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/basic_phrases/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/basic_phrases/build" />
       <excludeFolder url="file://$MODULE_DIR$/guess_my_number/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/guess_my_number/build" />
       <excludeFolder url="file://$MODULE_DIR$/number_shape/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/number_shape/build" />
+      <excludeFolder url="file://$MODULE_DIR$/tic_tac_toe/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/tic_tac_toe/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
