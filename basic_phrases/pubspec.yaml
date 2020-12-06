@@ -12,9 +12,7 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.0
-  flutter_sound: ^6.4.3+44
-  audioplayers: ^0.17.0
-  path_provider: ^1.6.0
+  assets_audio_player: ^2.0.13+1
 
 dev_dependencies:
   flutter_test:
@@ -25,4 +23,11 @@ flutter:
 
 
   assets:
-    - assets/audio/audio1.mp3
+    - assets/audio/masina.mp3
+    - assets/audio/car.mp3
+    - assets/audio/Silvester.mp3
+    - assets/audio/Stallone.mp3
+    - assets/audio/Marco.mp3
+    - assets/audio/Polo.mp3
+    - assets/audio/Maverick.mp3
+    - assets/audio/goose.mp3

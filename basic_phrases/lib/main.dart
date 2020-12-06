@@ -1,10 +1,5 @@
-import 'dart:io';
-
-import 'package:audioplayers/audio_cache.dart';
-import 'package:audioplayers/audioplayers.dart';
+import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_sound/flutter_sound.dart';
-import 'package:path_provider/path_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -26,17 +21,17 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final List<List<String>> dummyData = <List<String>>[
-    <String>['masina', 'audio/audio1.mp3'],
-    <String>['masina(Engleza)', ''],
-    <String>['Marco', ''],
-    <String>['Marco(Engleza)', ''],
-    <String>['Maverick', ''],
-    <String>['Maverick(TopGun)', ''],
-    <String>['Silvester', ''],
-    <String>['Silvester(Engleza)', ''],
-    <String>['Depp', ''],
-    <String>['Depp(Engleza)', ''],
+    <String>['masina', 'assets/audio/masina.mp3'],
+    <String>['masina(Engleza)', 'assets/audio/car.mp3'],
+    <String>['Marco', 'assets/audio/Marco.mp3'],
+    <String>['Polo', 'assets/audio/Polo.mp3'],
+    <String>['Maverick', 'assets/audio/Maverick.mp3'],
+    <String>['Goose', 'assets/audio/goose.mp3'],
+    <String>['Silvester', 'assets/audio/Silvester.mp3'],
+    <String>['Stallone', 'assets/audio/Stallone.mp3'],
   ];
+
+  final AssetsAudioPlayer assetsAudioPlayer = AssetsAudioPlayer();
 
   @override
   Widget build(BuildContext context) {
@@ -46,8 +41,8 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
       body: GridView.builder(
-        itemCount: 10,
-        padding: const EdgeInsets.all(8),
+          itemCount: dummyData.length,
+          padding: const EdgeInsets.all(8),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             crossAxisSpacing: 16,
@@ -59,17 +54,21 @@ class _HomePageState extends State<HomePage> {
                 alignment: AlignmentDirectional.center,
                 decoration: BoxDecoration(
                   color: Colors.lightBlue,
-                  borderRadius: BorderRadius.circular(24)
+                  borderRadius: BorderRadius.circular(24),
                 ),
-                child: Text(dummyData[index][0], style: const TextStyle(color: Colors.white, fontSize: 16),),
+                child: Text(
+                  dummyData[index][0],
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                  ),
+                ),
               ),
-              onTap: () async{
-
-
-                final AudioCache player = AudioCache();
-                await player.play('${dummyData[index][1]}');
-
-
+              onTap: () async {
+                await assetsAudioPlayer.open(
+                  Audio(dummyData[index][1]),
+                );
+                await assetsAudioPlayer.play();
               },
             );
           }),
