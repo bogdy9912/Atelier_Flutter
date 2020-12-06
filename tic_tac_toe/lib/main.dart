@@ -85,8 +85,8 @@ class _HomePageState extends State<HomePage> {
                           list[j % 3] = isPressed[j] == Colors.red
                               ? 1
                               : isPressed[j] == Colors.green
-                                  ? -1
-                                  : 0;
+                              ? -1
+                              : 0;
                           sum += list[j % 3];
                         }
                         list[3] = sum;
