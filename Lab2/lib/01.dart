@@ -3,11 +3,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 Future<void> main() async {
-  final http.Response response =
-  await http.get('http://yts.mx/api/v2/list_movies.json');
+  final http.Response response = await http.get('http://yts.mx/api/v2/list_movies.json');
 
-  final Map<String, dynamic> responseData =
-  json.decode(response.body) as Map<String, dynamic>;
+  final Map<String, dynamic> responseData = json.decode(response.body) as Map<String, dynamic>;
 //  print(data['data']['movies']);
 
   final Map<String, dynamic> data = responseData['data'];
@@ -16,18 +14,12 @@ Future<void> main() async {
 
   responseData['data']['movies'].forEach((dynamic e) {
     moviesList.add(
-      Movie(
-          id: e['id'],
-          title: e['title'],
-          cover: e['medium_cover_image'],
-          year: e['year']),
+      Movie(id: e['id'], title: e['title'], cover: e['medium_cover_image'], year: e['year']),
     );
   });
   print(moviesList[0]);
 
-  final List<Movie> moviesL = movies
-      .map((dynamic e) => Movie(title: e['title']))
-      .toList();
+  final List<Movie> moviesL = movies.map((dynamic e) => Movie(title: e['title'])).toList();
   print(moviesL[0].title);
 }
 
@@ -40,12 +32,8 @@ class Movie {
     this.cover,
   });
 
-  factory Movie.fromJson(dynamic e){
-    return Movie(
-        id: e['id'],
-        title: e['title'],
-        cover: e['medium_cover_image'],
-        year: e['year']);
+  factory Movie.fromJson(dynamic e) {
+    return Movie(id: e['id'], title: e['title'], cover: e['medium_cover_image'], year: e['year']);
   }
 
   final String title;

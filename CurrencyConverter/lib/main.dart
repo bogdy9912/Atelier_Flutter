@@ -41,8 +41,7 @@ class _MyAppState extends State<MyApp> {
                 height: 200,
               ),
               TextField(
-                keyboardType:
-                const TextInputType.numberWithOptions(decimal: true),
+                keyboardType: const TextInputType.numberWithOptions(decimal: true),
                 decoration: InputDecoration(
                   hintText: 'enter the amount in euro',
                   errorText: errMessage,

@@ -80,8 +80,7 @@ class _HomapageState extends State<Homapage> {
             ),
             if (myNumber != null)
               Text('You tried $myNumber\n $option',
-                  textAlign: TextAlign.center,
-                  style: const TextStyle(color: Colors.grey, fontSize: 35)),
+                  textAlign: TextAlign.center, style: const TextStyle(color: Colors.grey, fontSize: 35)),
             Card(
               margin: const EdgeInsets.all(16),
               child: Form(
@@ -98,9 +97,7 @@ class _HomapageState extends State<Homapage> {
                       controller: controller,
                       textInputAction: TextInputAction.done,
                       keyboardType: const TextInputType.numberWithOptions(),
-                      inputFormatters: <TextInputFormatter>[
-                        FilteringTextInputFormatter.digitsOnly
-                      ],
+                      inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
                       validator: (String value) {
                         if (value.isEmpty || value == null) {
                           return 'Please enter a value';
@@ -128,12 +125,10 @@ class _HomapageState extends State<Homapage> {
                               if (valid) {
                                 Form.of(ctx).save();
                                 setState(() {
-                                  if (int.tryParse(controller.text) >
-                                      randomNumber) {
+                                  if (int.tryParse(controller.text) > randomNumber) {
                                     option = 'Try lower';
                                   } else {
-                                    if (int.tryParse(controller.text) <
-                                        randomNumber) {
+                                    if (int.tryParse(controller.text) < randomNumber) {
                                       option = 'Try higher';
                                     } else {
                                       option = 'You guessed right';
@@ -158,8 +153,7 @@ class _HomapageState extends State<Homapage> {
                                           child: const Text('Try again!'),
                                         ),
                                         FlatButton(
-                                          onPressed: () =>
-                                              Navigator.of(context).pop(),
+                                          onPressed: () => Navigator.of(context).pop(),
                                           child: const Text('OK'),
                                         ),
                                       ],

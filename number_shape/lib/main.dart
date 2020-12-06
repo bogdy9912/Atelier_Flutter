@@ -76,9 +76,7 @@ class _HomepageState extends State<Homepage> {
             TextFormField(
               controller: controller,
               keyboardType: const TextInputType.numberWithOptions(),
-              inputFormatters: <TextInputFormatter>[
-                FilteringTextInputFormatter.digitsOnly
-              ],
+              inputFormatters: <TextInputFormatter>[FilteringTextInputFormatter.digitsOnly],
               validator: (String value) {
                 if (value == null || value.isEmpty) {
                   return 'Enter a value';
