@@ -52,7 +52,7 @@ class _HomePageState extends State<HomePage> {
             child: GridView.builder(
               itemCount: 9,
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3,
+                  crossAxisCount: 3
               ),
               itemBuilder: (BuildContext ctx, int index) {
                 return GestureDetector(
@@ -91,7 +91,6 @@ class _HomePageState extends State<HomePage> {
                         }
                         list[3] = sum;
                         matrix[i] = list;
-//                        matrix[(i/3).truncate()][i%3] = isPressed[i] == Colors.red ? 1 : 5;
                       }
                       print(matrix);
                       final List<int> list2 = <int>[0, 0, 0];
@@ -108,7 +107,6 @@ class _HomePageState extends State<HomePage> {
                       }
                       matrix[3] = list2;
                       print(matrix);
-//                      matrix[3][3] = sumDiagP;
                       if (sumDiagS.abs() == 3) {
                         for (int i = 0; i < 9; i++) {
                           if (i != 2 && i != 4 && i != 6) {
@@ -137,7 +135,6 @@ class _HomePageState extends State<HomePage> {
                           isDone = true;
                         }
                       }
-
                       for (int k = 0; k < 3; k++) {
                         if (matrix[3][k].abs() == 3) {
                           for (int i = 0; i < 9; i++) {
