@@ -11,6 +11,8 @@
       <excludeFolder url="file://$MODULE_DIR$/basic_phrases/build" />
       <excludeFolder url="file://$MODULE_DIR$/guess_my_number/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/guess_my_number/build" />
+      <excludeFolder url="file://$MODULE_DIR$/movie_time/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/movie_time/build" />
       <excludeFolder url="file://$MODULE_DIR$/number_shape/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/number_shape/build" />
       <excludeFolder url="file://$MODULE_DIR$/tic_tac_toe/.pub" />
