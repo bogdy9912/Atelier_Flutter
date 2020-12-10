@@ -30,19 +30,10 @@ class _HomePageState extends State<HomePage> {
 
     for (final String part in parts) {
       final String _flag = part.split('">')[0];
-      print(_flag);
       final String name = part.split('10px">')[1].split('</div')[0];
-      print(name);
       _flags.add('https://www.worldometers.info/img/flags/$_flag');
       _names.add(name);
-//      print(part);
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    getDataFromInternet();
   }
 
   @override
@@ -52,29 +43,33 @@ class _HomePageState extends State<HomePage> {
         title: const Text('Flags'),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
-            crossAxisSpacing: 8,
-            mainAxisSpacing: 8,
-          ),
-          itemCount: _names.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Column(
-              children: <Widget>[
-                Expanded(
-                    child: Image.network(
-                  _flags[index],
-                  fit: BoxFit.cover,
-                )),
-                Text(_names[index]),
-              ],
+      body: FutureBuilder<void>(
+          future: getDataFromInternet(),
+          builder: (BuildContext context, AsyncSnapshot<dynamic> _) {
+            return Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
+                ),
+                itemCount: _names.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: <Widget>[
+                      Expanded(
+                          child: Image.network(
+                        _flags[index],
+                        fit: BoxFit.cover,
+                      )),
+                      Text(_names[index]),
+                    ],
+                  );
+                },
+              ),
             );
-          },
-        ),
-      ),
+          }),
     );
   }
 }
