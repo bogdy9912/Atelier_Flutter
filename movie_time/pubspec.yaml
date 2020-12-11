@@ -14,10 +14,16 @@ dependencies:
 
 
   cupertino_icons: ^1.0.0
+  http: ^0.12.2
   pedantic: ^1.9.2
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/images/theater.jpg
+    - assets/images/fundal.jpg
