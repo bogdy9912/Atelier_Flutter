@@ -54,7 +54,7 @@ class _MovieItemState extends State<MovieItem> {
                             ),
                           ),
                           Column(
-                            children: [
+                            children: <Widget>[
                               Text(
                                 'Year: ${widget.year}',
                                 style: const TextStyle(
