@@ -1,14 +1,15 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MovieItem extends StatefulWidget {
-  const MovieItem({this.title, this.year, this.rating, this.imageUrl, this.summary});
+  const MovieItem({this.title, this.year, this.rating, this.imageUrl, this.summary, this.urlDownload});
 
   final String title;
   final int year;
   final double rating;
   final String imageUrl;
   final String summary;
+  final String urlDownload;
 
   @override
   _MovieItemState createState() => _MovieItemState();
@@ -26,16 +27,33 @@ class _MovieItemState extends State<MovieItem> {
           child: Stack(
             children: <Widget>[
               Container(
-                height: 350,
-                //width: 250,
+                height: 352,
+                width: 232,
                 child: Image.network(
                   widget.imageUrl,
                   fit: BoxFit.contain,
+                  errorBuilder: (BuildContext context, Object error, StackTrace stackTrace) {
+                    return Container(
+                      width: 232,
+                      color: Colors.grey,
+                      child: const Center(
+                        child: Text(
+                          'Image\ncomming\nsoon!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
                 ),
               ),
               AnimatedContainer(
-                height: 350,
-                width: 234,
+                height: 352,
+                width: 232,
                 duration: const Duration(milliseconds: 150),
                 curve: Curves.easeIn,
                 decoration: BoxDecoration(
@@ -47,6 +65,7 @@ class _MovieItemState extends State<MovieItem> {
                         children: <Widget>[
                           Text(
                             widget.title,
+                            textAlign: TextAlign.center,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 20,
@@ -85,7 +104,29 @@ class _MovieItemState extends State<MovieItem> {
                           ),
                           RaisedButton(
                               color: Colors.yellow,
-                              onPressed: () {},
+                              onPressed: () async {
+                                if (await canLaunch(widget.urlDownload)) {
+                                  await launch(widget.urlDownload);
+                                } else {
+                                  print('Could not launch');
+                                  showDialog<Widget>(
+                                    context: context,
+                                    builder: (BuildContext context) {
+                                      return AlertDialog(
+                                        title: const Text('Download doesn\'t work'),
+                                        actions: <Widget>[
+                                          FlatButton(
+                                            onPressed: () {
+                                              Navigator.of(context).pop();
+                                            },
+                                            child: const Text('CLOSE'),
+                                          ),
+                                        ],
+                                      );
+                                    },
+                                  );
+                                }
+                              },
                               child: const Text(
                                 'Download',
                                 style: TextStyle(
@@ -105,7 +146,6 @@ class _MovieItemState extends State<MovieItem> {
         setState(() {
           _isPressed = !_isPressed;
         });
-        print('la');
       },
     );
   }
