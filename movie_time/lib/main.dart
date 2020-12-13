@@ -38,8 +38,25 @@ class _HomePageState extends State<HomePage> {
     'minimum_rating': '0',
     'query_term': '',
   };
-  final List<String> qualityParams = <String>['720p', '1080p', '2160p', '3D', 'all'];
-  final List<String> ratingParams = <String>['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  final List<String> qualityParams = <String>[
+    '720p',
+    '1080p',
+    '2160p',
+    '3D',
+    'all',
+  ];
+  final List<String> ratingParams = <String>[
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+  ];
   final List<String> genreParams = <String>[
     'comedy',
     'sci-fi',
@@ -95,9 +112,17 @@ class _HomePageState extends State<HomePage> {
               children: <Widget>[
                 const Text(
                   'Sort',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
-                dropWidget(setState: setState, name: 'Sort by', keyName: 'sort_by', itemsList: sortByParams),
+                dropWidget(
+                  setState: setState,
+                  name: 'Sort by',
+                  keyName: 'sort_by',
+                  itemsList: sortByParams,
+                ),
                 const Text('Order by: '),
                 Column(
                   children: <Widget>[
@@ -125,12 +150,29 @@ class _HomePageState extends State<HomePage> {
                 ),
                 const Text(
                   'Filter',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
-                dropWidget(setState: setState, name: 'Quality', keyName: 'quality', itemsList: qualityParams),
                 dropWidget(
-                    setState: setState, name: 'Minimum rating', keyName: 'minimum_rating', itemsList: ratingParams),
-                dropWidget(setState: setState, name: 'Genre', keyName: 'genre', itemsList: genreParams),
+                  setState: setState,
+                  name: 'Quality',
+                  keyName: 'quality',
+                  itemsList: qualityParams,
+                ),
+                dropWidget(
+                  setState: setState,
+                  name: 'Minimum rating',
+                  keyName: 'minimum_rating',
+                  itemsList: ratingParams,
+                ),
+                dropWidget(
+                  setState: setState,
+                  name: 'Genre',
+                  keyName: 'genre',
+                  itemsList: genreParams,
+                ),
               ],
             ),
           ),
@@ -161,104 +203,109 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: Container(
-            width: 150,
-            child: TextField(
-              style: const TextStyle(color: Colors.deepOrange),
-              cursorColor: Colors.deepOrange,
-              decoration: const InputDecoration(
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.deepOrange,
-                  ),
-                ),
-                prefixIcon: Icon(
-                  Icons.search,
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Container(
+          width: 150,
+          child: TextField(
+            style: const TextStyle(color: Colors.deepOrange),
+            cursorColor: Colors.deepOrange,
+            decoration: const InputDecoration(
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
                   color: Colors.deepOrange,
                 ),
-                hintText: 'Movies',
-                hintStyle: TextStyle(
-                  color: Colors.deepOrange,
-                ),
-                focusColor: Colors.deepOrange,
               ),
-              onSubmitted: (String value) {
-                setState(() {
-                  param['query_term'] = value;
-                });
-              },
-              onChanged: (String value) {
-                if (_timer != null) {
-                  _timer.cancel();
-                }
-                _timer = Timer(const Duration(seconds: 2), () {
+              prefixIcon: Icon(
+                Icons.search,
+                color: Colors.deepOrange,
+              ),
+              hintText: 'Movies',
+              hintStyle: TextStyle(
+                color: Colors.deepOrange,
+              ),
+              focusColor: Colors.deepOrange,
+            ),
+            onSubmitted: (String value) {
+              setState(() {
+                param['query_term'] = value;
+              });
+            },
+            onChanged: (String value) {
+              if (_timer != null) {
+                _timer.cancel();
+              }
+              _timer = Timer(
+                const Duration(seconds: 2),
+                () {
                   setState(() {
                     print('aici');
                     param['query_term'] = value;
                   });
-                });
-              },
-            ),
+                },
+              );
+            },
           ),
-          centerTitle: true,
-          actions: <Widget>[
-            IconButton(
-              icon: const Icon(Icons.sort),
-              onPressed: () {
-                _sortAlertDialog(context);
-              },
-            ),
-          ],
         ),
-        body: Container(
-            height: double.infinity,
-            width: double.infinity,
-            decoration: const BoxDecoration(
+        centerTitle: true,
+        actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.sort),
+            onPressed: () {
+              _sortAlertDialog(context);
+            },
+          ),
+        ],
+      ),
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
 //                color: Colors.red,
-              image: DecorationImage(
-                image: AssetImage('assets/images/fundal.jpg'),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: FutureBuilder<void>(
-              future: http.get(_newUrl()),
-              builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-                if (snapshot.connectionState == ConnectionState.waiting) {
-                  return ListView.builder(
-                    itemCount: 5,
-                    itemBuilder: (BuildContext context, int index) => Center(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 12.0),
-                        child: Container(
-                          height: 352,
-                          width: 232,
-                          child: Image.asset(
-                            'assets/images/placeholder.jpg',
-                            width: 234,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+          image: DecorationImage(
+            image: AssetImage('assets/images/fundal.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: FutureBuilder<void>(
+          future: http.get(_newUrl()),
+          builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return ListView.builder(
+                itemCount: 20,
+                itemBuilder: (BuildContext context, int index) => Center(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 12.0),
+                    child: Container(
+                      height: 352,
+                      width: 232,
+                      child: Image.asset(
+                        'assets/images/placeholder.jpg',
+                        width: 234,
+                        fit: BoxFit.cover,
                       ),
                     ),
-                  );
-                }
-                final Map<String, dynamic> loadedData = json.decode(snapshot.data.body);
-
-                movies = loadedData['data']['movies'];
-                return ListView.builder(
-                  itemCount: 5,
-                  itemBuilder: (BuildContext context, int index) => MovieItem(
-                    title: movies[index]['title'],
-                    year: movies[index]['year'],
-                    rating: double.tryParse(movies[index]['rating'].toString()),
-                    imageUrl: movies[index]['medium_cover_image'],
-                    summary: movies[index]['summary'],
-                    urlDownload: movies[index]['url'],
                   ),
-                );
-              },
-            )));
+                ),
+              );
+            }
+            final Map<String, dynamic> loadedData = json.decode(snapshot.data.body);
+
+            movies = loadedData['data']['movies'];
+            return ListView.builder(
+              itemCount: 20,
+              itemBuilder: (BuildContext context, int index) => MovieItem(
+                title: movies[index]['title'],
+                year: movies[index]['year'],
+                rating: double.tryParse(movies[index]['rating'].toString()),
+                imageUrl: movies[index]['medium_cover_image'],
+                summary: movies[index]['summary'],
+                urlDownload: movies[index]['url'],
+              ),
+            );
+          },
+        ),
+      ),
+    );
   }
 }
