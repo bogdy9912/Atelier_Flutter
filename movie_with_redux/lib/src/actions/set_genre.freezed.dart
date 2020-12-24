@@ -69,8 +69,7 @@ mixin _$SetGenre {
 
 /// @nodoc
 abstract class $SetGenreCopyWith<$Res> {
-  factory $SetGenreCopyWith(SetGenre value, $Res Function(SetGenre) then) =
-      _$SetGenreCopyWithImpl<$Res>;
+  factory $SetGenreCopyWith(SetGenre value, $Res Function(SetGenre) then) = _$SetGenreCopyWithImpl<$Res>;
 }
 
 /// @nodoc
@@ -84,17 +83,14 @@ class _$SetGenreCopyWithImpl<$Res> implements $SetGenreCopyWith<$Res> {
 
 /// @nodoc
 abstract class $SetGenreStartCopyWith<$Res> {
-  factory $SetGenreStartCopyWith(
-          SetGenreStart value, $Res Function(SetGenreStart) then) =
+  factory $SetGenreStartCopyWith(SetGenreStart value, $Res Function(SetGenreStart) then) =
       _$SetGenreStartCopyWithImpl<$Res>;
   $Res call({List<String> genres});
 }
 
 /// @nodoc
-class _$SetGenreStartCopyWithImpl<$Res> extends _$SetGenreCopyWithImpl<$Res>
-    implements $SetGenreStartCopyWith<$Res> {
-  _$SetGenreStartCopyWithImpl(
-      SetGenreStart _value, $Res Function(SetGenreStart) _then)
+class _$SetGenreStartCopyWithImpl<$Res> extends _$SetGenreCopyWithImpl<$Res> implements $SetGenreStartCopyWith<$Res> {
+  _$SetGenreStartCopyWithImpl(SetGenreStart _value, $Res Function(SetGenreStart) _then)
       : super(_value, (v) => _then(v as SetGenreStart));
 
   @override
@@ -126,17 +122,14 @@ class _$SetGenreStart implements SetGenreStart {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SetGenreStart &&
-            (identical(other.genres, genres) ||
-                const DeepCollectionEquality().equals(other.genres, genres)));
+            (identical(other.genres, genres) || const DeepCollectionEquality().equals(other.genres, genres)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genres);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(genres);
 
   @override
-  $SetGenreStartCopyWith<SetGenreStart> get copyWith =>
-      _$SetGenreStartCopyWithImpl<SetGenreStart>(this, _$identity);
+  $SetGenreStartCopyWith<SetGenreStart> get copyWith => _$SetGenreStartCopyWithImpl<SetGenreStart>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -204,17 +197,14 @@ abstract class SetGenreStart implements SetGenre {
 
 /// @nodoc
 abstract class $SetGenreConcatCopyWith<$Res> {
-  factory $SetGenreConcatCopyWith(
-          SetGenreConcat value, $Res Function(SetGenreConcat) then) =
+  factory $SetGenreConcatCopyWith(SetGenreConcat value, $Res Function(SetGenreConcat) then) =
       _$SetGenreConcatCopyWithImpl<$Res>;
   $Res call({String genre});
 }
 
 /// @nodoc
-class _$SetGenreConcatCopyWithImpl<$Res> extends _$SetGenreCopyWithImpl<$Res>
-    implements $SetGenreConcatCopyWith<$Res> {
-  _$SetGenreConcatCopyWithImpl(
-      SetGenreConcat _value, $Res Function(SetGenreConcat) _then)
+class _$SetGenreConcatCopyWithImpl<$Res> extends _$SetGenreCopyWithImpl<$Res> implements $SetGenreConcatCopyWith<$Res> {
+  _$SetGenreConcatCopyWithImpl(SetGenreConcat _value, $Res Function(SetGenreConcat) _then)
       : super(_value, (v) => _then(v as SetGenreConcat));
 
   @override
@@ -246,13 +236,11 @@ class _$SetGenreConcat implements SetGenreConcat {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SetGenreConcat &&
-            (identical(other.genre, genre) ||
-                const DeepCollectionEquality().equals(other.genre, genre)));
+            (identical(other.genre, genre) || const DeepCollectionEquality().equals(other.genre, genre)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
 
   @override
   $SetGenreConcatCopyWith<SetGenreConcat> get copyWith =>
@@ -324,16 +312,13 @@ abstract class SetGenreConcat implements SetGenre {
 
 /// @nodoc
 abstract class $SetGenreDeleteCopyWith<$Res> {
-  factory $SetGenreDeleteCopyWith(
-          SetGenreDelete value, $Res Function(SetGenreDelete) then) =
+  factory $SetGenreDeleteCopyWith(SetGenreDelete value, $Res Function(SetGenreDelete) then) =
       _$SetGenreDeleteCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SetGenreDeleteCopyWithImpl<$Res> extends _$SetGenreCopyWithImpl<$Res>
-    implements $SetGenreDeleteCopyWith<$Res> {
-  _$SetGenreDeleteCopyWithImpl(
-      SetGenreDelete _value, $Res Function(SetGenreDelete) _then)
+class _$SetGenreDeleteCopyWithImpl<$Res> extends _$SetGenreCopyWithImpl<$Res> implements $SetGenreDeleteCopyWith<$Res> {
+  _$SetGenreDeleteCopyWithImpl(SetGenreDelete _value, $Res Function(SetGenreDelete) _then)
       : super(_value, (v) => _then(v as SetGenreDelete));
 
   @override

@@ -8,11 +8,12 @@ import 'movie.dart';
 part 'app_state.g.dart';
 
 abstract class AppState implements Built<AppState, AppStateBuilder> {
-  factory AppState(){
-    return _$AppState((AppStateBuilder b){
-      b..isLoading = false
-      ..quality = 'All'
-      ..page = 1;
+  factory AppState() {
+    return _$AppState((AppStateBuilder b) {
+      b
+        ..isLoading = false
+        ..quality = 'All'
+        ..page = 1;
     });
   }
 

@@ -34,9 +34,7 @@ mixin _$SetQuality {
 
 /// @nodoc
 abstract class $SetQualityCopyWith<$Res> {
-  factory $SetQualityCopyWith(
-          SetQuality value, $Res Function(SetQuality) then) =
-      _$SetQualityCopyWithImpl<$Res>;
+  factory $SetQualityCopyWith(SetQuality value, $Res Function(SetQuality) then) = _$SetQualityCopyWithImpl<$Res>;
   $Res call({String quality});
 }
 
@@ -60,17 +58,14 @@ class _$SetQualityCopyWithImpl<$Res> implements $SetQualityCopyWith<$Res> {
 
 /// @nodoc
 abstract class $QualityCopyWith<$Res> implements $SetQualityCopyWith<$Res> {
-  factory $QualityCopyWith(Quality value, $Res Function(Quality) then) =
-      _$QualityCopyWithImpl<$Res>;
+  factory $QualityCopyWith(Quality value, $Res Function(Quality) then) = _$QualityCopyWithImpl<$Res>;
   @override
   $Res call({String quality});
 }
 
 /// @nodoc
-class _$QualityCopyWithImpl<$Res> extends _$SetQualityCopyWithImpl<$Res>
-    implements $QualityCopyWith<$Res> {
-  _$QualityCopyWithImpl(Quality _value, $Res Function(Quality) _then)
-      : super(_value, (v) => _then(v as Quality));
+class _$QualityCopyWithImpl<$Res> extends _$SetQualityCopyWithImpl<$Res> implements $QualityCopyWith<$Res> {
+  _$QualityCopyWithImpl(Quality _value, $Res Function(Quality) _then) : super(_value, (v) => _then(v as Quality));
 
   @override
   Quality get _value => super._value as Quality;
@@ -101,17 +96,14 @@ class _$Quality implements Quality {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Quality &&
-            (identical(other.quality, quality) ||
-                const DeepCollectionEquality().equals(other.quality, quality)));
+            (identical(other.quality, quality) || const DeepCollectionEquality().equals(other.quality, quality)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(quality);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(quality);
 
   @override
-  $QualityCopyWith<Quality> get copyWith =>
-      _$QualityCopyWithImpl<Quality>(this, _$identity);
+  $QualityCopyWith<Quality> get copyWith => _$QualityCopyWithImpl<Quality>(this, _$identity);
 }
 
 abstract class Quality implements SetQuality {

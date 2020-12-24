@@ -2,7 +2,6 @@ library set_quality;
 
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-
 part 'set_quality.freezed.dart';
 
 @freezed

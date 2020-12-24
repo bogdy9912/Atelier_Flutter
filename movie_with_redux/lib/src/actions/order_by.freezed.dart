@@ -35,8 +35,7 @@ mixin _$OrderBy {
 
 /// @nodoc
 abstract class $OrderByCopyWith<$Res> {
-  factory $OrderByCopyWith(OrderBy value, $Res Function(OrderBy) then) =
-      _$OrderByCopyWithImpl<$Res>;
+  factory $OrderByCopyWith(OrderBy value, $Res Function(OrderBy) then) = _$OrderByCopyWithImpl<$Res>;
   $Res call({@nullable String order});
 }
 
@@ -60,16 +59,13 @@ class _$OrderByCopyWithImpl<$Res> implements $OrderByCopyWith<$Res> {
 
 /// @nodoc
 abstract class $SetOrderByCopyWith<$Res> implements $OrderByCopyWith<$Res> {
-  factory $SetOrderByCopyWith(
-          SetOrderBy value, $Res Function(SetOrderBy) then) =
-      _$SetOrderByCopyWithImpl<$Res>;
+  factory $SetOrderByCopyWith(SetOrderBy value, $Res Function(SetOrderBy) then) = _$SetOrderByCopyWithImpl<$Res>;
   @override
   $Res call({@nullable String order});
 }
 
 /// @nodoc
-class _$SetOrderByCopyWithImpl<$Res> extends _$OrderByCopyWithImpl<$Res>
-    implements $SetOrderByCopyWith<$Res> {
+class _$SetOrderByCopyWithImpl<$Res> extends _$OrderByCopyWithImpl<$Res> implements $SetOrderByCopyWith<$Res> {
   _$SetOrderByCopyWithImpl(SetOrderBy _value, $Res Function(SetOrderBy) _then)
       : super(_value, (v) => _then(v as SetOrderBy));
 
@@ -103,17 +99,14 @@ class _$SetOrderBy implements SetOrderBy {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SetOrderBy &&
-            (identical(other.order, order) ||
-                const DeepCollectionEquality().equals(other.order, order)));
+            (identical(other.order, order) || const DeepCollectionEquality().equals(other.order, order)));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(order);
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(order);
 
   @override
-  $SetOrderByCopyWith<SetOrderBy> get copyWith =>
-      _$SetOrderByCopyWithImpl<SetOrderBy>(this, _$identity);
+  $SetOrderByCopyWith<SetOrderBy> get copyWith => _$SetOrderByCopyWithImpl<SetOrderBy>(this, _$identity);
 }
 
 abstract class SetOrderBy implements OrderBy {

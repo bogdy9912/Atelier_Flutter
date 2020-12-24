@@ -28,12 +28,16 @@ class GetMovieContainer extends StatelessWidget {
 }
 
 class MovieUpdate {
-  MovieUpdate({@required this.isLoading, @required this.movies, @required this.quality,@required this.genres, @required this.orderBy});
+  MovieUpdate(
+      {@required this.isLoading,
+      @required this.movies,
+      @required this.quality,
+      @required this.genres,
+      @required this.orderBy});
 
   List<Movie> movies;
   bool isLoading;
   String quality;
   List<String> genres;
   String orderBy;
-
 }
