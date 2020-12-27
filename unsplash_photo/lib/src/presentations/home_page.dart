@@ -34,7 +34,7 @@ class HomePage extends StatelessWidget {
                       )
                       .toList(),
                   onChanged: (String selected) {
-                    print(selected);
+
                     StoreProvider.of<AppState>(context)
                       ..dispatch(SetOrder(selected))
                       ..dispatch(const GetPhoto.start(1));

@@ -42,7 +42,6 @@ class UnsplashApi {
 
     final Response response = await _client.get(url);
     if (count == 0) {
-
       final dynamic loadedData = json.decode(response.body);
 
       final List<Photo> listOfRandomPhoto = <Photo>[];
