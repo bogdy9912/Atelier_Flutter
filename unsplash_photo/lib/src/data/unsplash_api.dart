@@ -42,15 +42,15 @@ class UnsplashApi {
 
     final Response response = await _client.get(url);
     if (count == 0) {
-      print('si acii');
+
       final dynamic loadedData = json.decode(response.body);
-      print(loadedData);
+
       final List<Photo> listOfRandomPhoto = <Photo>[];
-      print('face lista');
+
       final Photo p = Photo.fromJson(loadedData);
-      print(p);
+
       listOfRandomPhoto.add(p);
-      print('a facut lista');
+
       return listOfRandomPhoto;
     } else {
       final List<dynamic> loadedData = json.decode(response.body);
@@ -58,9 +58,3 @@ class UnsplashApi {
     }
   }
 }
-//
-//void main() async {
-//  final UnsplashApi api = UnsplashApi(client: Client());
-//  Photo p = await api.getPhotoRandom();
-//  print(p);
-//}
