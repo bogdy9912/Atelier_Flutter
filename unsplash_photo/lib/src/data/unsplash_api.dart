@@ -28,7 +28,7 @@ class UnsplashApi {
     return loadedData.map((dynamic e) => Photo.fromJson(e)).toList();
   }
 
-  Future<List<Photo>> getPhotoRandom({String orientation, int count}) async {
+  Future<List<Photo>> getPhotoRandom({String orientation, int count, String contentFilter}) async {
     final Uri url = Uri(
       scheme: 'https',
       host: 'api.unsplash.com',
@@ -37,6 +37,7 @@ class UnsplashApi {
         'client_id': 'TypzmEjqRQAVKoVArTlTTOFbRIxXducx-8HVTlawDLY',
         if (orientation != null) 'orientation': orientation,
         'count': '$count',
+        'content_filter': contentFilter,
       },
     );
 

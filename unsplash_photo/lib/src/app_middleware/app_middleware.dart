@@ -35,8 +35,8 @@ class AppMiddleware {
       }
     } else if (action is GetPhotoStartRandom) {
       try {
-        final List<Photo> photoRandom =
-            await _unsplashApi.getPhotoRandom(orientation: store.state.orientation, count: store.state.count);
+        final List<Photo> photoRandom = await _unsplashApi.getPhotoRandom(
+            orientation: store.state.orientation, count: store.state.count, contentFilter: store.state.contentFilter);
         final GetPhotoSuccessfulRandom successfulRandom = GetPhotoSuccessfulRandom(photoRandom);
         store.dispatch(successfulRandom);
       } catch (err) {

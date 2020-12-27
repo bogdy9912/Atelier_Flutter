@@ -21,10 +21,20 @@ class _$AppState extends AppState {
   final String orientation;
   @override
   final int count;
+  @override
+  final String contentFilter;
 
   factory _$AppState([void Function(AppStateBuilder) updates]) => (new AppStateBuilder()..update(updates)).build();
 
-  _$AppState._({this.photos, this.isLoading, this.page, this.orderBy, this.photosRandom, this.orientation, this.count})
+  _$AppState._(
+      {this.photos,
+      this.isLoading,
+      this.page,
+      this.orderBy,
+      this.photosRandom,
+      this.orientation,
+      this.count,
+      this.contentFilter})
       : super._() {
     if (photos == null) {
       throw new BuiltValueNullFieldError('AppState', 'photos');
@@ -44,6 +54,9 @@ class _$AppState extends AppState {
     if (count == null) {
       throw new BuiltValueNullFieldError('AppState', 'count');
     }
+    if (contentFilter == null) {
+      throw new BuiltValueNullFieldError('AppState', 'contentFilter');
+    }
   }
 
   @override
@@ -62,17 +75,20 @@ class _$AppState extends AppState {
         orderBy == other.orderBy &&
         photosRandom == other.photosRandom &&
         orientation == other.orientation &&
-        count == other.count;
+        count == other.count &&
+        contentFilter == other.contentFilter;
   }
 
   @override
   int get hashCode {
     return $jf($jc(
         $jc(
-            $jc($jc($jc($jc($jc(0, photos.hashCode), isLoading.hashCode), page.hashCode), orderBy.hashCode),
-                photosRandom.hashCode),
-            orientation.hashCode),
-        count.hashCode));
+            $jc(
+                $jc($jc($jc($jc($jc(0, photos.hashCode), isLoading.hashCode), page.hashCode), orderBy.hashCode),
+                    photosRandom.hashCode),
+                orientation.hashCode),
+            count.hashCode),
+        contentFilter.hashCode));
   }
 
   @override
@@ -84,7 +100,8 @@ class _$AppState extends AppState {
           ..add('orderBy', orderBy)
           ..add('photosRandom', photosRandom)
           ..add('orientation', orientation)
-          ..add('count', count))
+          ..add('count', count)
+          ..add('contentFilter', contentFilter))
         .toString();
   }
 }
@@ -120,6 +137,10 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   int get count => _$this._count;
   set count(int count) => _$this._count = count;
 
+  String _contentFilter;
+  String get contentFilter => _$this._contentFilter;
+  set contentFilter(String contentFilter) => _$this._contentFilter = contentFilter;
+
   AppStateBuilder();
 
   AppStateBuilder get _$this {
@@ -131,6 +152,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
       _photosRandom = _$v.photosRandom?.toBuilder();
       _orientation = _$v.orientation;
       _count = _$v.count;
+      _contentFilter = _$v.contentFilter;
       _$v = null;
     }
     return this;
@@ -161,7 +183,8 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
               orderBy: orderBy,
               photosRandom: photosRandom.build(),
               orientation: orientation,
-              count: count);
+              count: count,
+              contentFilter: contentFilter);
     } catch (_) {
       String _$failedField;
       try {

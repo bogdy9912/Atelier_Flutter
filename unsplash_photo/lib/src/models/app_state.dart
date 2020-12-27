@@ -14,7 +14,8 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
           ..isLoading = false
           ..page = 1
           ..orderBy = 'latest'
-          ..count = 1;
+          ..count = 1
+          ..contentFilter = 'low';
       },
     );
   }
@@ -35,4 +36,7 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
   String get orientation;
 
   int get count;
+
+  @BuiltValueField(wireName: 'content_filter')
+  String get contentFilter;
 }

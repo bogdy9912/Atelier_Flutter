@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:unsplash_photo/src/actions/get_photo.dart';
+import 'package:unsplash_photo/src/actions/random/set_content_filter.dart';
 import 'package:unsplash_photo/src/actions/random/set_count.dart';
 import 'package:unsplash_photo/src/actions/random/set_orientation.dart';
 import 'package:unsplash_photo/src/containers/get_photo_random_container.dart';
@@ -23,6 +24,61 @@ class RandomPhotoScreen extends StatelessWidget {
                 icon: const Icon(Icons.refresh),
                 onPressed: () {
                   StoreProvider.of<AppState>(context).dispatch(const GetPhoto.startRandom());
+                },
+              ),
+              IconButton(
+                icon: const Icon(Icons.photo_filter),
+                onPressed: () {
+                  showDialog<Widget>(
+                    context: context,
+                    builder: (BuildContext context) => AlertDialog(
+                      title: const Text('Select content filter'),
+                      content: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: <Widget>[
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                              StoreProvider.of<AppState>(context)
+                                ..dispatch(const SetContentFilter('low'))
+                                ..dispatch(const GetPhoto.startRandom());
+                            },
+                            child: Text(
+                              'low',
+                              style: TextStyle(
+                                color: photoUpdate.contentFilter == 'low' ? Colors.blue : Colors.black,
+                              ),
+                            ),
+                          ),
+                          FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                              StoreProvider.of<AppState>(context)
+                                ..dispatch(const SetContentFilter('high'))
+                                ..dispatch(const GetPhoto.startRandom());
+                            },
+                            child: Text(
+                              'high',
+                              style: TextStyle(
+                                color: photoUpdate.contentFilter == 'high' ? Colors.blue : Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      actions: <Widget>[
+                        FlatButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: const Text(
+                            'CLOSE',
+                            style: TextStyle(color: Colors.grey),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
                 },
               ),
             ],

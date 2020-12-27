@@ -16,6 +16,7 @@ class GetPhotoRandomContainer extends StatelessWidget {
         photo: store.state.photosRandom.asList(),
         isLoading: store.state.isLoading,
         count: store.state.count,
+        contentFilter: store.state.contentFilter,
       ),
       builder: builder,
     );
@@ -23,9 +24,10 @@ class GetPhotoRandomContainer extends StatelessWidget {
 }
 
 class PhotoUpdate {
-  PhotoUpdate({@required this.photo, @required this.isLoading, @required this.count});
+  PhotoUpdate({@required this.photo, @required this.isLoading, @required this.count, @required this.contentFilter});
 
   List<Photo> photo;
   bool isLoading;
   int count;
+  String contentFilter;
 }

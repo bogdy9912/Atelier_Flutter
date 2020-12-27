@@ -1,4 +1,5 @@
 import 'package:unsplash_photo/src/actions/get_photo.dart';
+import 'package:unsplash_photo/src/actions/random/set_content_filter.dart';
 import 'package:unsplash_photo/src/actions/random/set_count.dart';
 
 import 'package:unsplash_photo/src/actions/random/set_orientation.dart';
@@ -23,12 +24,13 @@ AppState reducer(AppState state, dynamic action) {
   } else if (action is GetPhotoSuccessfulRandom) {
     builder
       ..photosRandom.replace(action.photosRandom)
-      ..photos.clear()
       ..isLoading = false;
   } else if (action is SetOrientation) {
     builder.orientation = action.orientation;
   } else if (action is SetCount) {
     builder.count = action.count;
+  } else if (action is SetContentFilterStart) {
+    builder.contentFilter = action.filter;
   }
 
   return builder.build();
