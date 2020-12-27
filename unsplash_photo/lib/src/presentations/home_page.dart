@@ -21,24 +21,22 @@ class HomePage extends StatelessWidget {
             centerTitle: true,
             actions: <Widget>[
               DropdownButton<String>(
-                  value: StoreProvider.of<AppState>(context).state.orderBy,
-                  items: <String>['latest', 'oldest', 'popular']
-                      .map(
-                        (String e) => DropdownMenuItem<String>(
-                          child: Text(
-                            e,
-                            style: const TextStyle(color: Colors.deepOrange),
-                          ),
-                          value: e,
+                value: StoreProvider.of<AppState>(context).state.orderBy,
+                items: <String>['latest', 'oldest', 'popular']
+                    .map(
+                      (String e) => DropdownMenuItem<String>(
+                        child: Text(
+                          e,
+                          style: const TextStyle(color: Colors.deepOrange),
                         ),
-                      )
-                      .toList(),
-                  onChanged: (String selected) {
-
-                    StoreProvider.of<AppState>(context)
-                      ..dispatch(SetOrder(selected))
-                      ..dispatch(const GetPhoto.start(1));
-                  },),
+                        value: e,
+                      ),
+                    )
+                    .toList(),
+                onChanged: (String selected) {
+                  StoreProvider.of<AppState>(context)..dispatch(SetOrder(selected))..dispatch(const GetPhoto.start(1));
+                },
+              ),
             ],
           ),
           drawer: Drawer(
@@ -63,7 +61,8 @@ class HomePage extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     );
-                  },),
+                  },
+                ),
           floatingActionButton: FloatingActionButton(
             child: const Icon(Icons.add),
             onPressed: () {
