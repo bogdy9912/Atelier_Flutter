@@ -19,6 +19,8 @@
       <excludeFolder url="file://$MODULE_DIR$/number_shape/build" />
       <excludeFolder url="file://$MODULE_DIR$/tic_tac_toe/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/tic_tac_toe/build" />
+      <excludeFolder url="file://$MODULE_DIR$/unsplash_photo/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/unsplash_photo/build" />
       <excludeFolder url="file://$MODULE_DIR$/world_flags/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/world_flags/build" />
     </content>
