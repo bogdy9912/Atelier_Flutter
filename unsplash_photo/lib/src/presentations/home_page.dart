@@ -38,7 +38,7 @@ class HomePage extends StatelessWidget {
                     StoreProvider.of<AppState>(context)
                       ..dispatch(SetOrder(selected))
                       ..dispatch(const GetPhoto.start(1));
-                  })
+                  },),
             ],
           ),
           drawer: Drawer(
@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     );
-                  }),
+                  },),
           floatingActionButton: FloatingActionButton(
             child: const Icon(Icons.add),
             onPressed: () {
