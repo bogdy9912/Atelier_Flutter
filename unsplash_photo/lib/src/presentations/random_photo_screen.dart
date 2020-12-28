@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:unsplash_photo/src/actions/get_photo.dart';
-import 'package:unsplash_photo/src/actions/random/set_content_filter.dart';
-import 'package:unsplash_photo/src/actions/random/set_count.dart';
-import 'package:unsplash_photo/src/actions/random/set_orientation.dart';
+import 'package:unsplash_photo/src/actions/index.dart';
+import 'package:unsplash_photo/src/models/index.dart';
 import 'package:unsplash_photo/src/containers/get_photo_random_container.dart';
-import 'package:unsplash_photo/src/models/app_state.dart';
+
 import 'package:unsplash_photo/src/presentations/app_drawer.dart';
 
 class RandomPhotoScreen extends StatelessWidget {

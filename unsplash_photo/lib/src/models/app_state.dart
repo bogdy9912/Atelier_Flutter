@@ -1,10 +1,4 @@
-library app_state;
-
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:unsplash_photo/src/models/photo.dart';
-
-part 'app_state.g.dart';
+part of 'index.dart';
 
 abstract class AppState implements Built<AppState, AppStateBuilder> {
   factory AppState() {

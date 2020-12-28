@@ -2,8 +2,7 @@ library serializers;
 
 import 'package:built_value/serializer.dart';
 import 'package:built_value/standard_json_plugin.dart';
-import 'package:unsplash_photo/src/models/photo.dart';
-import 'package:unsplash_photo/src/models/url_photo.dart';
+import 'package:unsplash_photo/src/models/index.dart';
 
 part 'serializers.g.dart';
 

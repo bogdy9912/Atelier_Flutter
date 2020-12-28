@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of get_photo;
+part of actions;
 
 // **************************************************************************
 // FreezedGenerator
@@ -892,4 +892,445 @@ abstract class GetPhotoErrorRandom implements GetPhoto {
 
   dynamic get error;
   $GetPhotoErrorRandomCopyWith<GetPhotoErrorRandom> get copyWith;
+}
+
+/// @nodoc
+class _$SetOrderTearOff {
+  const _$SetOrderTearOff();
+
+// ignore: unused_element
+  SetOrderBy call(String order) {
+    return SetOrderBy(
+      order,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $SetOrder = _$SetOrderTearOff();
+
+/// @nodoc
+mixin _$SetOrder {
+  String get order;
+
+  $SetOrderCopyWith<SetOrder> get copyWith;
+}
+
+/// @nodoc
+abstract class $SetOrderCopyWith<$Res> {
+  factory $SetOrderCopyWith(SetOrder value, $Res Function(SetOrder) then) = _$SetOrderCopyWithImpl<$Res>;
+  $Res call({String order});
+}
+
+/// @nodoc
+class _$SetOrderCopyWithImpl<$Res> implements $SetOrderCopyWith<$Res> {
+  _$SetOrderCopyWithImpl(this._value, this._then);
+
+  final SetOrder _value;
+  // ignore: unused_field
+  final $Res Function(SetOrder) _then;
+
+  @override
+  $Res call({
+    Object order = freezed,
+  }) {
+    return _then(_value.copyWith(
+      order: order == freezed ? _value.order : order as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SetOrderByCopyWith<$Res> implements $SetOrderCopyWith<$Res> {
+  factory $SetOrderByCopyWith(SetOrderBy value, $Res Function(SetOrderBy) then) = _$SetOrderByCopyWithImpl<$Res>;
+  @override
+  $Res call({String order});
+}
+
+/// @nodoc
+class _$SetOrderByCopyWithImpl<$Res> extends _$SetOrderCopyWithImpl<$Res> implements $SetOrderByCopyWith<$Res> {
+  _$SetOrderByCopyWithImpl(SetOrderBy _value, $Res Function(SetOrderBy) _then)
+      : super(_value, (v) => _then(v as SetOrderBy));
+
+  @override
+  SetOrderBy get _value => super._value as SetOrderBy;
+
+  @override
+  $Res call({
+    Object order = freezed,
+  }) {
+    return _then(SetOrderBy(
+      order == freezed ? _value.order : order as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SetOrderBy implements SetOrderBy {
+  const _$SetOrderBy(this.order) : assert(order != null);
+
+  @override
+  final String order;
+
+  @override
+  String toString() {
+    return 'SetOrder(order: $order)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SetOrderBy &&
+            (identical(other.order, order) || const DeepCollectionEquality().equals(other.order, order)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(order);
+
+  @override
+  $SetOrderByCopyWith<SetOrderBy> get copyWith => _$SetOrderByCopyWithImpl<SetOrderBy>(this, _$identity);
+}
+
+abstract class SetOrderBy implements SetOrder {
+  const factory SetOrderBy(String order) = _$SetOrderBy;
+
+  @override
+  String get order;
+  @override
+  $SetOrderByCopyWith<SetOrderBy> get copyWith;
+}
+
+/// @nodoc
+class _$SetContentFilterTearOff {
+  const _$SetContentFilterTearOff();
+
+// ignore: unused_element
+  SetContentFilterStart call(String filter) {
+    return SetContentFilterStart(
+      filter,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $SetContentFilter = _$SetContentFilterTearOff();
+
+/// @nodoc
+mixin _$SetContentFilter {
+  String get filter;
+
+  $SetContentFilterCopyWith<SetContentFilter> get copyWith;
+}
+
+/// @nodoc
+abstract class $SetContentFilterCopyWith<$Res> {
+  factory $SetContentFilterCopyWith(SetContentFilter value, $Res Function(SetContentFilter) then) =
+      _$SetContentFilterCopyWithImpl<$Res>;
+  $Res call({String filter});
+}
+
+/// @nodoc
+class _$SetContentFilterCopyWithImpl<$Res> implements $SetContentFilterCopyWith<$Res> {
+  _$SetContentFilterCopyWithImpl(this._value, this._then);
+
+  final SetContentFilter _value;
+  // ignore: unused_field
+  final $Res Function(SetContentFilter) _then;
+
+  @override
+  $Res call({
+    Object filter = freezed,
+  }) {
+    return _then(_value.copyWith(
+      filter: filter == freezed ? _value.filter : filter as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SetContentFilterStartCopyWith<$Res> implements $SetContentFilterCopyWith<$Res> {
+  factory $SetContentFilterStartCopyWith(SetContentFilterStart value, $Res Function(SetContentFilterStart) then) =
+      _$SetContentFilterStartCopyWithImpl<$Res>;
+  @override
+  $Res call({String filter});
+}
+
+/// @nodoc
+class _$SetContentFilterStartCopyWithImpl<$Res> extends _$SetContentFilterCopyWithImpl<$Res>
+    implements $SetContentFilterStartCopyWith<$Res> {
+  _$SetContentFilterStartCopyWithImpl(SetContentFilterStart _value, $Res Function(SetContentFilterStart) _then)
+      : super(_value, (v) => _then(v as SetContentFilterStart));
+
+  @override
+  SetContentFilterStart get _value => super._value as SetContentFilterStart;
+
+  @override
+  $Res call({
+    Object filter = freezed,
+  }) {
+    return _then(SetContentFilterStart(
+      filter == freezed ? _value.filter : filter as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SetContentFilterStart implements SetContentFilterStart {
+  const _$SetContentFilterStart(this.filter) : assert(filter != null);
+
+  @override
+  final String filter;
+
+  @override
+  String toString() {
+    return 'SetContentFilter(filter: $filter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SetContentFilterStart &&
+            (identical(other.filter, filter) || const DeepCollectionEquality().equals(other.filter, filter)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(filter);
+
+  @override
+  $SetContentFilterStartCopyWith<SetContentFilterStart> get copyWith =>
+      _$SetContentFilterStartCopyWithImpl<SetContentFilterStart>(this, _$identity);
+}
+
+abstract class SetContentFilterStart implements SetContentFilter {
+  const factory SetContentFilterStart(String filter) = _$SetContentFilterStart;
+
+  @override
+  String get filter;
+  @override
+  $SetContentFilterStartCopyWith<SetContentFilterStart> get copyWith;
+}
+
+/// @nodoc
+class _$SetCountTearOff {
+  const _$SetCountTearOff();
+
+// ignore: unused_element
+  SetCountStart call(int count) {
+    return SetCountStart(
+      count,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $SetCount = _$SetCountTearOff();
+
+/// @nodoc
+mixin _$SetCount {
+  int get count;
+
+  $SetCountCopyWith<SetCount> get copyWith;
+}
+
+/// @nodoc
+abstract class $SetCountCopyWith<$Res> {
+  factory $SetCountCopyWith(SetCount value, $Res Function(SetCount) then) = _$SetCountCopyWithImpl<$Res>;
+  $Res call({int count});
+}
+
+/// @nodoc
+class _$SetCountCopyWithImpl<$Res> implements $SetCountCopyWith<$Res> {
+  _$SetCountCopyWithImpl(this._value, this._then);
+
+  final SetCount _value;
+  // ignore: unused_field
+  final $Res Function(SetCount) _then;
+
+  @override
+  $Res call({
+    Object count = freezed,
+  }) {
+    return _then(_value.copyWith(
+      count: count == freezed ? _value.count : count as int,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SetCountStartCopyWith<$Res> implements $SetCountCopyWith<$Res> {
+  factory $SetCountStartCopyWith(SetCountStart value, $Res Function(SetCountStart) then) =
+      _$SetCountStartCopyWithImpl<$Res>;
+  @override
+  $Res call({int count});
+}
+
+/// @nodoc
+class _$SetCountStartCopyWithImpl<$Res> extends _$SetCountCopyWithImpl<$Res> implements $SetCountStartCopyWith<$Res> {
+  _$SetCountStartCopyWithImpl(SetCountStart _value, $Res Function(SetCountStart) _then)
+      : super(_value, (v) => _then(v as SetCountStart));
+
+  @override
+  SetCountStart get _value => super._value as SetCountStart;
+
+  @override
+  $Res call({
+    Object count = freezed,
+  }) {
+    return _then(SetCountStart(
+      count == freezed ? _value.count : count as int,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SetCountStart implements SetCountStart {
+  const _$SetCountStart(this.count) : assert(count != null);
+
+  @override
+  final int count;
+
+  @override
+  String toString() {
+    return 'SetCount(count: $count)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SetCountStart &&
+            (identical(other.count, count) || const DeepCollectionEquality().equals(other.count, count)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(count);
+
+  @override
+  $SetCountStartCopyWith<SetCountStart> get copyWith => _$SetCountStartCopyWithImpl<SetCountStart>(this, _$identity);
+}
+
+abstract class SetCountStart implements SetCount {
+  const factory SetCountStart(int count) = _$SetCountStart;
+
+  @override
+  int get count;
+  @override
+  $SetCountStartCopyWith<SetCountStart> get copyWith;
+}
+
+/// @nodoc
+class _$SetOrientationTearOff {
+  const _$SetOrientationTearOff();
+
+// ignore: unused_element
+  SetOrientationStart call(@nullable String orientation) {
+    return SetOrientationStart(
+      orientation,
+    );
+  }
+}
+
+/// @nodoc
+// ignore: unused_element
+const $SetOrientation = _$SetOrientationTearOff();
+
+/// @nodoc
+mixin _$SetOrientation {
+  @nullable
+  String get orientation;
+
+  $SetOrientationCopyWith<SetOrientation> get copyWith;
+}
+
+/// @nodoc
+abstract class $SetOrientationCopyWith<$Res> {
+  factory $SetOrientationCopyWith(SetOrientation value, $Res Function(SetOrientation) then) =
+      _$SetOrientationCopyWithImpl<$Res>;
+  $Res call({@nullable String orientation});
+}
+
+/// @nodoc
+class _$SetOrientationCopyWithImpl<$Res> implements $SetOrientationCopyWith<$Res> {
+  _$SetOrientationCopyWithImpl(this._value, this._then);
+
+  final SetOrientation _value;
+  // ignore: unused_field
+  final $Res Function(SetOrientation) _then;
+
+  @override
+  $Res call({
+    Object orientation = freezed,
+  }) {
+    return _then(_value.copyWith(
+      orientation: orientation == freezed ? _value.orientation : orientation as String,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class $SetOrientationStartCopyWith<$Res> implements $SetOrientationCopyWith<$Res> {
+  factory $SetOrientationStartCopyWith(SetOrientationStart value, $Res Function(SetOrientationStart) then) =
+      _$SetOrientationStartCopyWithImpl<$Res>;
+  @override
+  $Res call({@nullable String orientation});
+}
+
+/// @nodoc
+class _$SetOrientationStartCopyWithImpl<$Res> extends _$SetOrientationCopyWithImpl<$Res>
+    implements $SetOrientationStartCopyWith<$Res> {
+  _$SetOrientationStartCopyWithImpl(SetOrientationStart _value, $Res Function(SetOrientationStart) _then)
+      : super(_value, (v) => _then(v as SetOrientationStart));
+
+  @override
+  SetOrientationStart get _value => super._value as SetOrientationStart;
+
+  @override
+  $Res call({
+    Object orientation = freezed,
+  }) {
+    return _then(SetOrientationStart(
+      orientation == freezed ? _value.orientation : orientation as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SetOrientationStart implements SetOrientationStart {
+  const _$SetOrientationStart(@nullable this.orientation);
+
+  @override
+  @nullable
+  final String orientation;
+
+  @override
+  String toString() {
+    return 'SetOrientation(orientation: $orientation)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SetOrientationStart &&
+            (identical(other.orientation, orientation) ||
+                const DeepCollectionEquality().equals(other.orientation, orientation)));
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode ^ const DeepCollectionEquality().hash(orientation);
+
+  @override
+  $SetOrientationStartCopyWith<SetOrientationStart> get copyWith =>
+      _$SetOrientationStartCopyWithImpl<SetOrientationStart>(this, _$identity);
+}
+
+abstract class SetOrientationStart implements SetOrientation {
+  const factory SetOrientationStart(@nullable String orientation) = _$SetOrientationStart;
+
+  @override
+  @nullable
+  String get orientation;
+  @override
+  $SetOrientationStartCopyWith<SetOrientationStart> get copyWith;
 }

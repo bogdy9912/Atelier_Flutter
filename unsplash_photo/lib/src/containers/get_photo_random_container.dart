@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
-import 'package:unsplash_photo/src/models/app_state.dart';
-import 'package:unsplash_photo/src/models/photo.dart';
+import 'package:unsplash_photo/src/models/index.dart';
 
 class GetPhotoRandomContainer extends StatelessWidget {
   const GetPhotoRandomContainer({@required this.builder});

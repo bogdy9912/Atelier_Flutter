@@ -1,9 +1,4 @@
-library get_photo;
-
-import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:unsplash_photo/src/models/photo.dart';
-
-part 'get_photo.freezed.dart';
+part of 'index.dart';
 
 @freezed
 abstract class GetPhoto with _$GetPhoto {

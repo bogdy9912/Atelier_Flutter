@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:http/http.dart';
 import 'package:redux/redux.dart';
-import 'package:unsplash_photo/src/actions/get_photo.dart';
-import 'package:unsplash_photo/src/app_middleware/app_middleware.dart';
+import 'package:redux_epics/redux_epics.dart';
+import 'package:unsplash_photo/src/actions/index.dart';
+import 'package:unsplash_photo/src/app_epics/app_epics.dart';
 import 'package:unsplash_photo/src/data/unsplash_api.dart';
-import 'package:unsplash_photo/src/models/app_state.dart';
+import 'package:unsplash_photo/src/models/index.dart';
 import 'package:unsplash_photo/src/presentations/home_page.dart';
 import 'package:unsplash_photo/src/presentations/random_photo_screen.dart';
 import 'package:unsplash_photo/src/reducer/reducer.dart';
@@ -13,12 +14,14 @@ import 'package:unsplash_photo/src/reducer/reducer.dart';
 void main() {
   final Client _client = Client();
   final UnsplashApi api = UnsplashApi(client: _client);
-  final AppMiddleware appMiddleware = AppMiddleware(unsplashApi: api);
+  final AppEpics epics = AppEpics(unsplashApi: api);
   final AppState initialState = AppState();
   final Store<AppState> store = Store<AppState>(
     reducer,
-    middleware: appMiddleware.middleware,
     initialState: initialState,
+    middleware: <Middleware<AppState>>[
+      EpicMiddleware<AppState>(epics.epics),
+    ],
   );
   store.dispatch(const GetPhoto.start(1));
   runApp(MyApp(store: store));

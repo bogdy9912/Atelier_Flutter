@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:http/http.dart';
 import 'package:meta/meta.dart';
-import 'package:unsplash_photo/src/models/photo.dart';
+import 'package:unsplash_photo/src/models/index.dart';
 
 class UnsplashApi {
   const UnsplashApi({@required Client client})

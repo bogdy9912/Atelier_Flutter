@@ -1,11 +1,4 @@
-library photo;
-
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
-import 'package:unsplash_photo/src/models/url_photo.dart';
-import '../models/serializers.dart';
-
-part 'photo.g.dart';
+part of 'index.dart';
 
 abstract class Photo implements Built<Photo, PhotoBuilder> {
   factory Photo([void Function(PhotoBuilder b) updates]) = _$Photo;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
-import 'package:unsplash_photo/src/actions/get_photo.dart';
-import 'package:unsplash_photo/src/models/app_state.dart';
+import 'package:unsplash_photo/src/actions/index.dart';
+import 'package:unsplash_photo/src/models/index.dart';
 import 'package:unsplash_photo/src/presentations/home_page.dart';
 import 'package:unsplash_photo/src/presentations/random_photo_screen.dart';
 

@@ -1,8 +1,4 @@
-library set_orientation;
-
-import 'package:freezed_annotation/freezed_annotation.dart';
-
-part 'set_orientation.freezed.dart';
+part of 'index.dart';
 
 @freezed
 abstract class SetOrientation with _$SetOrientation {
