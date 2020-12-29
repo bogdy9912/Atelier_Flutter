@@ -25,8 +25,8 @@ class GetPhotoContainer extends StatelessWidget {
 class PhotosUpdate {
   PhotosUpdate({@required this.photos, @required this.isLoading, @required this.page, @required this.orderBy});
 
-  List<Photo> photos;
-  bool isLoading;
-  int page;
-  String orderBy;
+  final List<Photo> photos;
+  final bool isLoading;
+  final int page;
+  final String orderBy;
 }

@@ -24,8 +24,11 @@ class AppMiddleware {
     next(action);
     try {
       final GetPhotoStart startAction = action;
-      final List<Photo> photos =
-          await _unsplashApi.getPhotos(page: startAction.page, perPage: 30, orderBy: store.state.orderBy);
+      final List<Photo> photos = await _unsplashApi.getPhotos(
+        page: startAction.page,
+        perPage: 30,
+        orderBy: store.state.orderBy,
+      );
       final GetPhotoSuccessful successful = GetPhoto.successful(photos);
       store.dispatch(successful);
     } catch (err) {
